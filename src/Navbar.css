@@ -1,0 +1,27 @@
+.Navbar {
+    /* size */
+    height: 2vh;
+    width: 100%;
+    /* background */
+    background-color: rgb(188, 208, 202);
+    /* box size adjustment */
+    padding: 8px;
+    /* display */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+    /* shadow */
+    box-shadow: 1px 1px 1px  rgb(63, 158, 128);
+}
+
+.Navbar h1 {
+    /* font */
+    font-size: 11px;
+    font-weight: bold;
+    /* color */
+    color: rgb(63, 158, 128);
+    /* spacing */
+    margin-left: -20px;
+    margin-top: -10px;
+}
