@@ -30,7 +30,7 @@
     /* background */
     background-color: rgb(237, 231, 231);
     /* shadow */
-    box-shadow: 0px 0px 1px 1px rgb(63, 158, 128);
+    box-shadow: 0px 0px 1px 0.2px rgb(63, 158, 128);
 }
 
 .navlist li a {
