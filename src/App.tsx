@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Navbar from "./Navbar"
 import Blogs from "./Blogs"
+import { useEffect } from 'react';
 
 export interface BlogList {
   title : string,
@@ -9,19 +10,39 @@ export interface BlogList {
   id: number
 }
 
-function App() : JSX.Element {
-      const blogs : BlogList[] = [{
-        title: "My first Blog", body: "written in january", id: 1
-    }, {
-        title: "My second Blog", body: "written in mars", id: 2
-    }, {
-        title: "My third Blog", body: "written in aout", id: 3
+async function fetchdata() {
+    try {
+        const response = await fetch("http://localhost:5000/blogs");
+        if (response.ok === false)
+          throw new Error();
+        const jsonblogs = response.json();
+        return jsonblogs;
+    } catch(error : any){
+      throw new Error("can't show blogs");
     }
-    ]
+}
+
+
+function App() : JSX.Element {
+  const [blogslist, setblogs] = useState(undefined);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(undefined);
+
+  const fn = useEffect(() => {
+      fetchdata().then((resp : any) => {
+        setblogs(resp);
+      })
+      .catch((error : any) => {
+        setError(error.message)
+      })
+      .finally(() => setIsLoading(false))
+    }, []);
   return (
     <div className="App">
       <Navbar />
-      <Blogs blogs={blogs}/>
+      { isLoading && <div className="loading">is Loading...</div> }
+      { error && <div className="error"> {error} </div> }
+      { blogslist && <Blogs blogs={blogslist}/> }
     </div>
   );
 }
