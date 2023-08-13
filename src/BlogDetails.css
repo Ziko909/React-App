@@ -1,0 +1,13 @@
+.blog_details {
+    /* font */
+    font-family: inherit;
+    /* size */
+    width: 75%;
+    /* spacing and size adjustments */
+    margin: 20px auto;
+    padding: 10px;
+    /* display */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+}
