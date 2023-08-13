@@ -1,0 +1,30 @@
+.blog_item {
+    /* size */
+    width: 100%;
+    /* spacing and size adjustments */
+    margin-top: 10px;
+    /* display */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.blog_item:hover {
+    /* shadow */
+    box-shadow: 1px 1px 1px 0.5px rgb(75, 158, 131);
+    /* spacing and size adjustments */
+    padding-bottom: 3px;
+    padding-left: 2px;
+}
+
+.blog_item h2 {
+    /* font */
+    font-size: 15px;
+    /* color */
+    color: rgb(75, 158, 131);
+}
+
+.blog_item p {
+    /* font */
+    font-size: 10px;
+}
