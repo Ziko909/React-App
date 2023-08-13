@@ -1,20 +1,19 @@
 import React from "react";
 import "./Blogs.css"
-import { BlogList } from "./App";
+import Blog from "./Blog";
+import { BlogType } from "./Blog";
 
 interface BlogsType {
-    blogs: BlogList[]
+    blogs: BlogType[]
 }
 
 function Blogs(props : BlogsType) : JSX.Element {
-    const blogs : BlogList[] = props.blogs;
+    const blogs : BlogType[] = props.blogs;
+
     return (
         <div className="blogs_container">
-            {blogs.map((blog : BlogList) => (
-                <div className="blog_item" key={blog.id}>
-                    <h2>{blog.title}</h2>
-                    <p>{blog.body}</p>
-                </div>
+            {blogs.map((blog : BlogType) => (
+                <Blog blog={blog}></Blog>
             ))}
         </div>
         )
