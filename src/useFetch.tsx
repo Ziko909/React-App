@@ -4,11 +4,12 @@ const fetchdata = async function(url: string, abortController : AbortController)
     try {
             const response = await fetch(url, { signal: abortController.signal });
             if (response.ok !== true) {
-                throw new Error("can't show content");
+                throw new Error();
             }
             const data = await response.json();
             return data;
         } catch (error : any) {
+            error.message = "can't show content";
             throw error;
         }
 }
