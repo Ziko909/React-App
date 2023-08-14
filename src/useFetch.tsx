@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 
-
-const fetchdata = async function(url: string) {
+const fetchdata = async function(url: string, abortController : AbortController) {
     try {
-            const response = await fetch(url);
+            const response = await fetch(url, { signal: abortController.signal });
             if (response.ok !== true) {
-                throw new Error();
+                throw new Error("can't show content");
             }
             const data = await response.json();
             return data;
         } catch (error : any) {
-            throw new Error("can't show blogs");
+            throw error;
         }
 }
 
@@ -20,15 +19,19 @@ const useFetch = (url : string) => {
     const [error, setError] = useState(undefined);
 
     useEffect(() => {
-        const data = fetchdata(url);
+        const abortController = new AbortController();
+        const data = fetchdata(url, abortController);
+        
         data.then((data) => {
-            setData(data);
-            setError(undefined);
-        })
-        .catch((error) => {
-            setError(error.message); 
-        })
-        .finally(() => setIsLoading(false));
+                    setData(data);
+                    setError(undefined);
+                })
+            .catch((error) => {
+                    if (error.name !== 'AbortError')
+                        setError(error.message);
+                })
+            .finally(() => setIsLoading(false));
+            return () => abortController.abort();
     }, [url])
     return ({data, isLoading, error});
 }
