@@ -15,7 +15,7 @@ interface BlogItem {
 function Blog(props: BlogItem) {
     const blog : BlogType = props.blog;
     return (
-        <div className="blog_item" key={blog.id}>
+        <div className="blog_item">
             <h2>{blog.title}</h2>
             <p>{blog.body}</p>
         </div>

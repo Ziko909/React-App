@@ -13,7 +13,7 @@ function Blogs(props : BlogsType) : JSX.Element {
     return (
         <div className="blogs_container">
             {blogs.map((blog : BlogType) => (
-                <Blog blog={blog}></Blog>
+                <Blog blog={blog} key={blog.id}></Blog>
             ))}
         </div>
         )
