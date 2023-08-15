@@ -9,6 +9,11 @@
     justify-content: space-between;
 }
 
+.blog-link {
+    /* outline */
+    text-decoration: none;
+}
+
 .blog_item:hover {
     /* shadow */
     box-shadow: 1px 1px 1px 0.5px rgb(75, 158, 131);
@@ -19,12 +24,27 @@
 
 .blog_item h2 {
     /* font */
-    font-size: 15px;
+    font-size: 10px;
     /* color */
     color: rgb(75, 158, 131);
+    /* spacing */
+    margin: 3px;
+}
+
+.blog_item h4 {
+    /* fonts */
+    font-size: 10px;
+    /* color */
+    color: rgb(75, 158, 131);
+    /* spacing */
+    margin: 3px;
 }
 
 .blog_item p {
     /* font */
     font-size: 10px;
+    /* color */
+    color: rgb(75, 158, 131);
+    /* spacing */
+    margin: 3px;
 }
