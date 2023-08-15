@@ -11,3 +11,32 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
 }
+
+.blog_details button {
+    /* fonts */
+    font-size: 5px;
+    /* size adjustments */
+    padding: 2px;
+    /* color */
+    color: black;
+    /* border */
+    border: 0.5px solid rgb(63, 158, 128);
+    border-radius: 4px;
+    /* display */
+    display: block;
+    /* spacing */
+    margin: 3px auto;
+    /* cursor */
+    cursor: pointer;
+    /* background */
+    background-color: rgb(195, 212, 207);
+}
+
+.blog_details button:hover {
+    /* color */
+    color: rgb(63, 158, 128);
+    /* background */
+    background-color: rgb(237, 231, 231);
+    /* shadow */
+    box-shadow: 0px 0px 1px 0.2px rgb(63, 158, 128);
+}
