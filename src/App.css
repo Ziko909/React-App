@@ -15,6 +15,7 @@
   /* fonts */
   font-family: Inconsolata;
   overflow: hidden;
+  overflow-y: scroll;
 }
 
 .loading {
