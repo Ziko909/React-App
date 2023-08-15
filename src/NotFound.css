@@ -1,0 +1,15 @@
+
+
+.not_found {
+    /* spacing */
+    margin: 40px auto;
+}
+
+.not_found h1 {
+    /* font */
+    font-size: 10px;
+    /* color */
+    color: rgb(63, 158, 128);
+    /* text */
+    text-align: center;
+}
